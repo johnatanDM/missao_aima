@@ -7,9 +7,11 @@ import time
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 
+#get environment variable URL
+
 # Função para gerar QR code
 def gerar_qrcode(id_unico):
-    qr_code_img = qrcode.make(f"http://meusistema.com/?id={id_unico}")
+    qr_code_img = qrcode.make(f"https://missao-aima.fly.dev/?id={id_unico}")
     qr_code_path = f"static/qrcodes/{id_unico}.png"
     qr_code_img.save(qr_code_path)
     return qr_code_path
