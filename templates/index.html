@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Estrutura de Missão - AIMA</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-image">
+        </div>
+        <h1>Estrutura de Missão</h1>
+        <div class="qr-code">
+            <img src="{{ qr_code_path }}" alt="QR Code">
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="id_unico">ID Único:</label>
+            <input type="text" id="id_unico" name="id_unico" value="{{ id_unico }}" readonly>
+            
+            <label for="file">Selecione o arquivo:</label>
+            <input type="file" id="file" name="file" required>
+            
+            <button type="submit">Fazer Upload</button>
+        </form>
+        <div class="download">
+            <p><a href="{{ url_for('download_file', id_unico=id_unico) }}" class="download-button">Clique aqui para baixar o arquivo</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Johnatan Ribeiro - ALCC</p>
+        </div>
+    </div>
+</body>
+</html>

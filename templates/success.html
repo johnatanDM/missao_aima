@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Upload Bem-Sucedido</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Bem-Sucedido</h1>
+        <p>Seu arquivo foi enviado com sucesso!</p>
+        <p><a href="{{ url_for('download_file', id_unico=id_unico) }}">Clique aqui para baixar o arquivo</a></p>
+        <div class="footer">
+            <p>&copy; 2024 Johnatan Ribeiro - ALCC</p>
+        </div>
+    </div>
+</body>
+</html>
